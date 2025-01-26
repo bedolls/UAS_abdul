@@ -2,15 +2,14 @@
 #1. koneksikan file ini
 include("../koneksi.php");
 
-#2. mengambil value dari form
-$kd = $_POST['kode'];
-$jrs = $_POST['jurusan'];
+#2. mengambil id dari tombol hapus
+$id = $_GET['xyz'];
 
 #3. menulis query
-$simpan = "INSERT INTO jurusans (kode,jurusan) VALUES ('$kd','$jrs')";
+$hapus = "DELETE FROM tbl_kategori_bk WHERE id_kategori='$id'";
 
 #4. jalankan query
-$proses = mysqli_query($koneksi, $simpan);
+$proses = mysqli_query($koneksi, $hapus);
 
 #5. mengalihkan halaman
 // header("location:index.php");

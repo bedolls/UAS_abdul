@@ -6,7 +6,7 @@ include("../koneksi.php");
 $id = $_GET['id'];
 
 #3. mengambil semua record data berdasarkan id yang dipilih
-$ambil = "SELECT * FROM jurusans WHERE id='$id'";
+$ambil = "SELECT * FROM tbl_bk WHERE id_buku='$id'";
 
 #4. menjalankan query
 $edit = mysqli_query($koneksi,$ambil);
@@ -20,7 +20,7 @@ $data = mysqli_fetch_array($edit)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Jurusan</title>
+    <title>Data Buku</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/all.css">
 </head>
@@ -34,19 +34,27 @@ $data = mysqli_fetch_array($edit)
         <div class="col-8 m-auto">
             <div class="card">
             <div class="card-header">
-                <h3 class="float-start">Form Edit Data Jurusan</h3>
+                <h3 class="float-start">Form Edit Data buku</h3>
                 
             </div>
             <div class="card-body">
             <form action="update.php" method="post">
-                <input type="hidden" name="id" value="<?=$data['id']?>">
+                <input type="hidden" name="id_buku" value="<?=$data['id_buku']?>">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Kode Jurusan</label>
-                    <input type="text" readonly value="<?=$data['kode']?>" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">judul</label>
+                    <input type="text" value="<?=$data['judul']?>" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Nama Jurusan</label>
-                    <input type="text" value="<?=$data['jurusan']?>" name="jurusan" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">penulis</label>
+                    <input type="text" value="<?=$data['penulis']?>" name="penulis" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">kategori</label>
+                    <input type="text" name="kategori_id" value="<?=$data['kategori_id']?>" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">cover buku</label>
+                    <input type="file" name="cover_bk" value="<?=$data['cover_bk']?>" class="form-control" id="exampleInputPassword1">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Update</button>

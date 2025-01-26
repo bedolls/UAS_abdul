@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $password =  "";
-$database = "tbl_buku";
+$database = "bk_perpus";
 
 $koneksi = mysqli_connect($host,$username,$password,$database);
 

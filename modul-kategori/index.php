@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Jurusan</title>
+    <title>Data kategori</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/all.css">
 </head>
@@ -14,10 +14,10 @@
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-8 m-auto">
+        <div class="col-12 m-auto">
             <div class="card">
             <div class="card-header">
-                <h3 class="float-start">Data Jurusan</h3>
+                <h3 class="float-start">Data kategori</h3>
                 <span class="float-end"><a class="btn btn-primary" href="form.php"><i class="fa-solid fa-square-plus"></i> Tambah Data</a></span>
             </div>
             <div class="card-body">
@@ -25,9 +25,7 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Kode</th>
-                        <th scope="col">Nama Jurusan</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Nama Kategori</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +34,7 @@
                     include("../koneksi.php");
 
                     #2. menulis query
-                    $tampil = "SELECT * FROM jurusans";
+                    $tampil = "SELECT * FROM tbl_kategori_bk";
 
                     #3. jalankan query
                     $proses = mysqli_query($koneksi, $tampil);
@@ -47,17 +45,16 @@
                     ?>
                     <tr>
                         <th scope="row"><?=$nomor++?></th>
-                        <td><?=$data['kode']?></td>
-                        <td><?=$data['jurusan']?></td>
+                        <td><?=$data['id_kategori']?></td>
                         <td>
-                            <a class="btn btn-info btn-sm" href="edit.php?id=<?=$data['id']?>"><i class="fa fa-pen-to-square"></i></a>
+                            <a class="btn btn-info btn-sm" href="edit.php?id=<?=$data['nm_kategori']?>"><i class="fa fa-pen-to-square"></i></a>
                             
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapus<?=$data['id']?>">
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapus<?=$data['id_kategori']?>">
                             <i class="fa-solid fa-trash"></i>
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="hapus<?=$data['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="hapus<?=$data['id_kategori']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -65,11 +62,11 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Yakin data <b><?=$data['jurusan']?></b> ingin dihapus?
+                                    Yakin data <b><?=$data['id_kategori']?></b> ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                    <a href="hapus.php?xyz=<?=$data['id']?>" class="btn btn-danger">Hapus</a>
+                                    <a href="hapus.php?xyz=<?=$data['id_kategori']?>" class="btn btn-danger">Hapus</a>
                                 </div>
                                 </div>
                             </div>

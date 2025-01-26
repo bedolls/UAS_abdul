@@ -7,22 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/is62/PROJECT/index.php">Beranda</a>
+          <a class="nav-link active" aria-current="page" href="/UAS_abdul/index.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/is62/PROJECT/modul-mahasiswa/index.php">Data Mahasiswa</a>
+          <a class="nav-link active" aria-current="page" href="/UAS_abdul/modul-buku/index.php">Data buku</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/is62/PROJECT/modul-jurusan/index.php">Data Jurusan</a>
+          <a class="nav-link active" aria-current="page" href="/UAS_abdul/modul-kategori/index.php">Kategori buku</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/is62/PROJECT/modul-dosen/index.php">Data Dosen</a>
+          <a class="nav-link active" aria-current="page" href="/UAS_abdul/ubah-password.php">Ubah Password</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/is62/PROJECT/ubah-password.php">Ubah Password</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/is62/PROJECT/logout.php">Logout</a>
+          <a class="nav-link active" aria-current="page" href="/UAS_abdul/logout.php">Logout</a>
         </li>
         
       </ul>
