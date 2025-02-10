@@ -21,22 +21,22 @@
                 
             </div>
             <div class="card-body">
-            <form action="proses.php" method="post" enctype="multipart/form-data">
+            <form action="proses.php" method="post">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">judul</label>
+                    <label for="exampleInputEmail1" class="form-label">Judul Buku</label>
                     <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">penulis</label>
+                    <label for="exampleInputPassword1" class="form-label">Penulis</label>
                     <input type="text" name="penulis" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">kategori</label>
+                    <label for="exampleInputPassword1" class="form-label">Kategori Buku</label>
                     <input type="text" name="kategori_id" class="form-control" id="exampleInputPassword1">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">cover Foto</label>
-                    <input type="file" accept="image/*" name="cover_bk" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" class="form-label">Cover Buku</label>
+                    <input type="file" name="cover" class="form-control" id="exampleInputPassword1">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>

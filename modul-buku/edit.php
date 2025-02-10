@@ -6,7 +6,7 @@ include("../koneksi.php");
 $id = $_GET['id'];
 
 #3. mengambil semua record data berdasarkan id yang dipilih
-$ambil = "SELECT * FROM tbl_bk WHERE id_buku='$id'";
+$ambil = "SELECT * FROM tbl_buku WHERE id='$id'";
 
 #4. menjalankan query
 $edit = mysqli_query($koneksi,$ambil);
@@ -39,7 +39,7 @@ $data = mysqli_fetch_array($edit)
             </div>
             <div class="card-body">
             <form action="update.php" method="post">
-                <input type="hidden" name="id_buku" value="<?=$data['id_buku']?>">
+                <input type="hidden" name="id" value="<?=$data['id']?>">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">judul</label>
                     <input type="text" value="<?=$data['judul']?>" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -54,7 +54,7 @@ $data = mysqli_fetch_array($edit)
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">cover buku</label>
-                    <input type="file" name="cover_bk" value="<?=$data['cover_bk']?>" class="form-control" id="exampleInputPassword1">
+                    <input type="file" name="cover" value="<?=$data['cover']?>" class="form-control" id="exampleInputPassword1">
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Update</button>

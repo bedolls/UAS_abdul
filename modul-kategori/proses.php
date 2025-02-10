@@ -5,7 +5,7 @@ include("../koneksi.php");
 #2. mengambil value dari form
 $nm_kategori = $_POST['nm_kategori'];
 #3. menulis query
-$simpan = "INSERT INTO tbl_kategori_bk (nm_kategori) VALUES ('$nm_kategori')";
+$simpan = "INSERT INTO tbl_kategori_buku (nm_kategori) VALUES ('$nm_kategori')";
 
 #4. jalankan query
 $proses = mysqli_query($koneksi, $simpan);

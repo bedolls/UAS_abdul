@@ -3,12 +3,12 @@
 include("../koneksi.php");
 
 #2. mengambil value dari form
-$id_kategori = $_POST['id_kategori'];
+$id = $_POST['id'];
 $nm_kategori = $_POST['nm_kategori'];
 
 
 #3. menulis query
-$sunting = "UPDATE tbl_kategori_bk SET nm_kategori='$nm_kategori' WHERE id_kategori='$id_kategori'";
+$sunting = "UPDATE tbl_kategori_buku SET nm_kategori='$nm_kategori' WHERE id='$id'";
 
 #4. jalankan query
 $proses = mysqli_query($koneksi, $sunting);

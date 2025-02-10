@@ -25,10 +25,10 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Judul</th>
-                        <th scope="col">penulis</th>
-                        <th scope="col">Kategori</th>
-                        <th scope="col">Cover buku</th>
+                        <th scope="col">Judul Buku</th>
+                        <th scope="col">Penulis</th>
+                        <th scope="col">Kategori Buku</th>
+                        <th scope="col">Cover Buku</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -38,7 +38,7 @@
                     include("../koneksi.php");
 
                     #2. menulis query
-                    $tampil = "SELECT * FROM tbl_bk";
+                    $tampil = "SELECT * FROM tbl_buku";
 
                     #3. jalankan query
                     $proses = mysqli_query($koneksi, $tampil);
@@ -52,37 +52,29 @@
                         <td><?=$data['judul']?></td>
                         <td><?=$data['penulis']?></td>
                         <td><?=$data['kategori_id']?></td>
-                        <td><?=$data['cover_bk']?></td>
+                        <td><?=$data['cover']?></td>
                         <td>
+                            <a class="btn btn-info btn-sm" href="edit.php?id=<?=$data['id']?>"><i class="fa fa-pen-to-square"></i></a>
+                            
+                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapus<?=$data['id']?>">
+                            <i class="fa-solid fa-trash"></i>
+                            </button>
+
                             <!-- TOMBOL DETAIL -->
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?=$data['judul']?>">
+                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#detail<?=$data['id']?>">
                             <i class="fa-solid fa-eye"></i>
                             </button>
 
                             <!-- MODAL DETAIL-->
-                            <div class="modal fade" id="detail<?=$data['nim']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="detail<?=$data['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Data <?=$data['nm_mhs']?> </h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Cover <?=$data['judul']?> </h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <img width="200" src="foto/<?=$data['']?>cover_bk" alt="">
-                                    <table class="table">
-                                        <tr>
-                                            <td scope="col">Judul</td>
-                                            <th scope="col">: <?=$data['judul']?></th>
-                                        </tr>
-                                        <tr>
-                                            <td scope="col">Penulis</td>
-                                            <th scope="col">: <?=$data['penulis']?></th>
-                                        </tr>
-                                        <tr>
-                                            <td scope="col">Kategori</td>
-                                            <th scope="col">: <?=$data['kategori_id']?></th>
-                                        </tr>
-                                    </table>
+                                    <img width="200" src="foto/<?=$data['cover']?>" alt="">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -91,17 +83,8 @@
                                 </div>
                             </div>
                             </div>
-
-                            <!-- TOMBOL EDIT -->
-                            <a class="btn btn-info btn-sm" href="edit.php?id=<?=$data['id_buku']?>"><i class="fa fa-pen-to-square"></i></a>
-                            
-                            <!-- TOMBOL HAPUS -->
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapus<?=$data['id_buku']?>">
-                            <i class="fa-solid fa-trash"></i>
-                            </button>
-
-                            <!-- MODAL HAPUS-->
-                            <div class="modal fade" id="hapus<?=$data['id_buku']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- Modal -->
+                            <div class="modal fade" id="hapus<?=$data['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -109,11 +92,11 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Yakin data <b><?=$data['id_buku']?></b> ingin dihapus?
+                                    Yakin data <b><?=$data['judul']?></b> ingin dihapus?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                    <a href="hapus.php?xyz=<?=$data['id_buku']?>" class="btn btn-danger">Hapus</a>
+                                    <a href="hapus.php?xyz=<?=$data['id']?>" class="btn btn-danger">Hapus</a>
                                 </div>
                                 </div>
                             </div>

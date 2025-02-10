@@ -3,15 +3,15 @@
 include("../koneksi.php");
 
 #2. mengambil value dari form
-$id_buku = $_POST['id_buku'];
+$id = $_POST['id'];
 $judul = $_POST['judul'];
 $penulis = $_POST['penulis'];
 $kategori_id = $_POST['kategori_id'];
-$cover_bk = $_POST['cover_bk'];
+$cover = $_POST['cover'];
 
 
 #3. menulis query
-$sunting = "UPDATE tbl_bk SET judul='$judul', penulis='$penulis', kategori_id='$kategori_id', cover_bk='$cover_bk'";
+$sunting = "UPDATE tbl_buku SET judul='$judul', penulis='$penulis', kategori_id='$kategori_id', cover='$cover'";
 
 #4. jalankan query
 $proses = mysqli_query($koneksi, $sunting);
