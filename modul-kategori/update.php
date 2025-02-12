@@ -12,9 +12,12 @@ $sunting = "UPDATE tbl_kategori_buku SET nm_kategori='$nm_kategori' WHERE id='$i
 
 #4. jalankan query
 $proses = mysqli_query($koneksi, $sunting);
-
+if (!$proses) {
+    die("Query gagal di jalankan:". mysqli_error($koneksi));
+}
 #5. mengalihkan halaman
-// header("location:index.php");
+header("location:index.php");
+exit();
 ?>
 <script>
     document.location="index.php";

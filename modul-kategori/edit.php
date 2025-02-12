@@ -20,7 +20,7 @@ $data = mysqli_fetch_array($edit)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Kategori Buku</title>
+    <title>kategori buku</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/all.css">
 </head>
@@ -34,16 +34,16 @@ $data = mysqli_fetch_array($edit)
         <div class="col-8 m-auto">
             <div class="card">
             <div class="card-header">
-                <h3 class="float-start">Form Edit Data Kategori</h3>
+                <h3 class="float-start">Form Edit Data kategori</h3>
                 
             </div>
             <div class="card-body">
             <form action="update.php" method="post">
+                <input type="hidden" name="id" value="<?=$data['id']?>">
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Nama Kategori</label>
-                    <input type="text" value="<?=$data['nm_kategori']?>" name="nm_kategori" class="form-control" id="exampleInputPassword1">
+                    <label for="exampleInputEmail1" class="form-label">Nama kategori</label>
+                    <input type="text" value="<?=$data['nm_kategori']?>" name="nm_kategori" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
             </div>
