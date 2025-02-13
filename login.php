@@ -9,7 +9,7 @@ if(isset($_POST['tombol'])){
   $email = $_POST['email'];
   $pass = md5($_POST['pass']);
 
-  #3. tulisklajn query pengecekan apakaha data login tersedia di database?
+  #3. tuliskan query pengecekan apakah data login tersedia di database?
   $sql_cek = "SELECT * FROM users WHERE email='$email' AND password='$pass'";
 
   #4. menjalankan query diatas
